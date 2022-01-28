@@ -4,6 +4,9 @@ import com.alkemy.disney.dto.GeneroDTO;
 import com.alkemy.disney.entity.Genero;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class GeneroMapper {
 
@@ -26,4 +29,11 @@ public class GeneroMapper {
         return dto;
     }
 
+    public List<GeneroDTO> listEntity2DTO(List<Genero> entityList){
+        List<GeneroDTO> dtoList = new ArrayList<>();
+        for (Genero entity: entityList) {
+            dtoList.add(generoEntity2DTO(entity));
+        }
+        return dtoList;
+    }
 }

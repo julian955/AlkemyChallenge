@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,7 +29,7 @@ public class Personaje {
     private String historia ;
 
     @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
-    private Collection<Pelicula> peliculas = new ArrayList<>();
+    private List<Pelicula> peliculas = new ArrayList<>();
 
     private Boolean alta = true;
 }

@@ -7,8 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.*;
 
 
 @Entity
@@ -49,7 +48,7 @@ public class Pelicula {
             inverseJoinColumns = @JoinColumn(name = "personaje_id")
 
     )
-    private Collection<Personaje> personajes = new HashSet<>();
+    private Set<Personaje> personajes = new HashSet<>();
 
     private boolean alta = true;
 }
