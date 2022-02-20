@@ -3,6 +3,8 @@ package com.alkemy.disney.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE pelicula SET alta = false WHERE id =?")
+@Where(clause = "alta = true")
 public class Personaje {
 
     @Id

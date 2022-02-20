@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,13 +17,15 @@ public class PersonajeDTO {
 
     private String nombre;
 
-    private int edad;
+    private Integer edad;
 
-    private double peso;
+    private Double peso;
 
     private String historia ;
 
-    private Collection<Pelicula> peliculas = new ArrayList<>();
+    private List<Long>  peliculasId;
+
+    private List<Pelicula> peliculas = new ArrayList<>();
 
 
 }

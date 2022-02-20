@@ -3,6 +3,8 @@ package com.alkemy.disney.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,6 +15,8 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE pelicula SET alta = false WHERE id =?")
+@Where(clause = "alta = true")
 public class Pelicula {
 
     @Id
@@ -50,5 +54,22 @@ public class Pelicula {
     )
     private Set<Personaje> personajes = new HashSet<>();
 
+   /* private List<Long> personajesId = new ArrayList<>();*/
+
     private boolean alta = true;
+
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "id=" + id +
+                ", imagen='" + imagen + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", estreno=" + estreno +
+                ", calificacion=" + calificacion +
+                ", genero=" + genero +
+                ", generoId=" + generoId +
+                ", personajes=" + personajes +
+                ", alta=" + alta +
+                '}';
+    }
 }

@@ -11,4 +11,6 @@ public interface GeneroService {
      List<GeneroDTO> returnList();
 
      void delete(Long id);
+
+
 }

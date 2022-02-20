@@ -7,9 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 
 @Getter
@@ -24,11 +22,25 @@ public class PeliculaDTO {
 
     private String estreno;
 
-    private int calificacion;
+    private Integer calificacion;
 
     private Long generoId;
 
-    private Collection<Personaje> personajes;
+    private List<Long>  personajesId;
 
+    private Set<Personaje> personajes = new HashSet<>();
 
+    @Override
+    public String toString() {
+        return "PeliculaDTO{" +
+                "id=" + id +
+                ", imagen='" + imagen + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", estreno='" + estreno + '\'' +
+                ", calificacion=" + calificacion +
+                ", generoId=" + generoId +
+                ", personajesId=" + personajesId +
+                ", personajes=" + personajes +
+                '}';
+    }
 }
