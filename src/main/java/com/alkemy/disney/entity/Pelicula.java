@@ -33,7 +33,8 @@ public class Pelicula {
 
     private int calificacion;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
+    @ManyToOne
     @JoinColumn(name = "genero_id" , insertable = false, updatable = false)
     private Genero genero;
 

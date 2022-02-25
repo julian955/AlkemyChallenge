@@ -23,7 +23,7 @@ public class EmailServiceImpl implements EmailService {
 
     @Value("${alkemy.disney.email.sender}")
     private String emailSender;
-    @Value("${alkemy.disnet.email.enabled}")
+    @Value("${alkemy.disney.email.enabled}")
     private boolean enabled;
 
     public void sendWelcomeEmailTo(String to){
