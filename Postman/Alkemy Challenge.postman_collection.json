@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "556ce1c7-9466-47ef-8c4a-8b160302bf67",
+		"name": "Alkemy Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Genero",
+			"item": [
+				{
+					"name": "Agregar generos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Comedia\",\r\n    \"imagen\": \"/test/img/img3.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Generos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Genero por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/generos/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personaje",
+			"item": [
+				{
+					"name": "Agregar personajes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Pipo2\",\r\n    \"imagen\": \"/test/img/img3.jpg\",\r\n    \"edad\": \"33\",\r\n    \"peso\":\"78.5\",\r\n    \"historia\": \"asdasdasd\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/personajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bucar Por Filtros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes?nombre=Goofy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Goofy"
+								},
+								{
+									"key": "edad",
+									"value": "26",
+									"disabled": true
+								},
+								{
+									"key": "peliculaId",
+									"value": "15",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Personajes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGhvdG1haWwuY29tIiwiZXhwIjoxNjQ1NzA1NzI4LCJpYXQiOjE2NDU2Njk3Mjh9.B_sMxmmosKJ3begczxHD8jJUBq7Xawhw0V_x-sRjhhQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/personajes/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Personaje",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar personaje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Edit\",\r\n    \"edad\": 15,\r\n    \"peso\": 85.5,\r\n    \"historia\":\"editada\"\r\n\r\n    \r\n    \r\n   \r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/personajes/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pelicula",
+			"item": [
+				{
+					"name": "Agregar peliculas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"TEST3\",\r\n    \"imagen\": \"/test/img/img3.jpg\",\r\n    \"estreno\":\"25-01-2021\",\r\n    \"calificacion\":\"5\",\r\n    \"generoId\": \"3\",\r\n    \"personajesId\":[8,11,16]\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar peliculas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generoId\": 2\r\n    \r\n    \r\n   \r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peliculas/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Peliculas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Pelicula por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bucar Por Filtros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "test2",
+									"disabled": true
+								},
+								{
+									"key": "idGenero",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "idPersonajes",
+									"value": "8,16",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "ASC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test@hotmail.com\",\r\n    \"password\" : \"test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test@hotmail.com\",\r\n    \"password\" : \"test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
